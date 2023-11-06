@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE_DIR)
 DEPFLAGS = -MP -MMD -MF $(OBJ_DIR)/$*.d
 NAME = push_swap
 
@@ -7,7 +7,17 @@ INCLUDE_DIR = ./include
 SRC_DIR = ./src
 OBJ_DIR = ./obj
 
-SRCS = 
+SRCS =  $(SRC_DIR)/push_swap_main.c  \
+		$(SRC_DIR)/stack_essentials.c  \
+		$(SRC_DIR)/fill_stack_a.c \
+		$(SRC_DIR)/errors_utils.c \
+		$(SRC_DIR)/extra_utils.c \
+		$(SRC_DIR)/testing_essentials.c \
+		$(SRC_DIR)/swaps.c \
+		$(SRC_DIR)/pushes.c \
+		$(SRC_DIR)/rotate.c \
+		$(SRC_DIR)/reverse_rotate.c
+
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 DEPS = $(patsubst $(OBJ_DIR)/%.o,$(OBJ_DIR)/%.d,$(OBJS))
 
@@ -33,7 +43,6 @@ clean:
 	if [ -d "$(OBJ_DIR)" ]; then \
 		rmdir $(OBJ_DIR); \
 	fi
-
 
 fclean: clean
 	rm -f $(NAME)
