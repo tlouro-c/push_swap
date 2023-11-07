@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_main.c                                   :+:      :+:    :+:   */
+/*   algorithm_testing.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:48:42 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 00:38:51 by tlouro-c         ###   ########.fr       */
+/*   Created: 2023/11/07 00:27:47 by tlouro-c          #+#    #+#             */
+/*   Updated: 2023/11/07 00:41:10 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char *argv[])
+int	ordered(t_stack **stack)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		ordered_status;
+	t_stack	*current;
+	t_stack *next;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	fill_stack_a(&stack_a, argc, argv);
-	
-	printf("Stack A: \n");
-	print_stack(stack_a);
-	
-	ordered_status = ordered(&stack_a);	
-	(void)ordered_status;
-	stack_clear(&stack_a);
-	stack_clear(&stack_b);
+	if (*stack == NULL)
+	{
+		write(1, "Ordered\n", 8);
+		return (1);
+	}
+	current = *stack;
+	while (current -> next != NULL)
+	{
+		next = current -> next;
+		if ((current -> data) > (next -> data))
+		{
+			write(1, "Not ordered\n", 12);
+			return (0);
+		}
+		current = next;
+	}
+	write(1, "Ordered\n", 8);
+	return (1);
 }
