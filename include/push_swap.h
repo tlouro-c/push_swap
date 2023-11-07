@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 00:36:02 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/07 01:05:11 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	stack_clear(t_stack **stack);
 void	error_exit(void);
 void	stack_empty(void);
 void	valid_nr_check(char *s);
+void	dup_check(t_stack **stack);
 
 /* END of errors_utils.c */
 
@@ -89,6 +90,6 @@ void	rrr(t_stack **stack1, t_stack **stack2);
 
 /* END of reverse_rotate.c */
 
-int	ordered(t_stack **stack);
+int		ordered(t_stack **stack);
 
 #endif /* PUSH_SWAP_H */

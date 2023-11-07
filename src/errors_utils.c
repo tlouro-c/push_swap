@@ -6,11 +6,34 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:14:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/06 16:55:17 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/07 01:02:06 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	dup_check(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*current;
+	int		counter;
+
+	current = *stack;
+	while (current != NULL)
+	{
+		counter = 0;
+		tmp = *stack;
+		while (tmp != NULL)
+		{
+			if ((current -> data) == (tmp -> data))
+				counter++;
+			tmp = tmp -> next;
+		}
+		if (counter > 1)
+			error_exit();
+		current = current -> next;
+	}
+}
 
 void	error_exit(void)
 {

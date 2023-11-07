@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:48:42 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 00:38:51 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/07 01:04:52 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ int	main(int argc, char *argv[])
 	stack_a = NULL;
 	stack_b = NULL;
 	fill_stack_a(&stack_a, argc, argv);
-	
+	dup_check(&stack_a);
 	printf("Stack A: \n");
 	print_stack(stack_a);
-	
-	ordered_status = ordered(&stack_a);	
+	ordered_status = ordered(&stack_a);
 	(void)ordered_status;
 	stack_clear(&stack_a);
 	stack_clear(&stack_b);
