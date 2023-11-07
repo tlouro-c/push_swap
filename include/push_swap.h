@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 01:05:11 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:43:32 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	dup_check(t_stack **stack);
 
 //* START of extra_utils.c */
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, t_stack **stack);
 int		ft_isdigit(int c);
 int		ft_isspace(int c);
 

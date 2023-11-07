@@ -51,6 +51,9 @@ fclean: clean
 
 re: fclean all
 
+r:
+	./push_swap
+
 .PHONY: all clean fclean re
 
 -include $(OBJ_DIR)/$*.d
