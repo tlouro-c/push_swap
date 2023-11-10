@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:14:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 01:02:06 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:29:19 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	valid_nr_check(char *s)
 	int	i;
 
 	if (s[0] != '+' && s[0] != '-' 
-		&& ft_isdigit(s[0]) == 0 && ft_isspace(s[0]) == 0)
+		&& ft_isdigit(s[0]) == 0 && space(s[0]) == 0)
 		error_exit();
 	i = 0;
-	while (ft_isspace(s[i]))
+	while (space(s[i]))
 		i++;
 	if (s[i] != '+' && s[i] != '-' && ft_isdigit(s[i]) == 0)
 		error_exit();

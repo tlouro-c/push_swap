@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:10 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 15:43:14 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:49:53 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,17 @@ int	ft_isdigit(int c)
 	return (c >= '0' && c <= '9');
 }
 
-int	ft_isspace(int c)
+int	space(int c)
 {
 	return (c == 32 || (c >= 7 && c <= 13));
+}
+
+size_t ft_strlen(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

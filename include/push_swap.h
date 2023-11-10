@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/10 00:33:18 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/10 13:29:40 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	dup_check(t_stack **stack);
 
 int		ft_atoi(const char *str, t_stack **stack);
 int		ft_isdigit(int c);
-int		ft_isspace(int c);
+int		space(int c);
+size_t	ft_strlen(char *s);
 
 /* END of errors_utils.c */
 
@@ -61,6 +62,9 @@ void	fill_stack_a(t_stack **stack, int argc, char *argv[]);
 void	print_stack(t_stack *stack);
 
 /* END of etesting_essentials.c */
+
+int 	count_words(char *s);
+char	**split(char *string);
 
 //? COMMANDS HERE
 
