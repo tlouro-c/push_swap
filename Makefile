@@ -17,8 +17,6 @@ SRCS =  $(SRC_DIR)/push_swap_main.c  \
 		$(SRC_DIR)/pushes.c \
 		$(SRC_DIR)/rotate.c \
 		$(SRC_DIR)/reverse_rotate.c \
-		$(SRC_DIR)/algorithm_testing.c
-
 
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 DEPS = $(patsubst $(OBJ_DIR)/%.o,$(OBJ_DIR)/%.d,$(OBJS))

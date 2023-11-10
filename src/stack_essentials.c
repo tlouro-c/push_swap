@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:36:48 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/06 17:21:47 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:37:06 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,5 @@ void	stack_clear(t_stack **stack)
 		free (tmp);
 		tmp = next;
 	}
+	*stack = NULL;
 }

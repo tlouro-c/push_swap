@@ -6,13 +6,13 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:31:45 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/06 17:19:46 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/09 18:46:48 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	insert_end(stack, pop(stack));
 }

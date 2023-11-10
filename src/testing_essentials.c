@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:53:07 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/07 12:23:23 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/09 21:37:20 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	print_stack(t_stack *stack)
 	t_stack	*iter;
 	int		counter;
 
+	if (stack == NULL)
+		return ;
 	counter = 0;
 	iter = stack;
 	while (iter != NULL)
