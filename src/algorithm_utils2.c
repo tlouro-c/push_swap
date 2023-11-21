@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testing_essentials.c                               :+:      :+:    :+:   */
+/*   algorithm_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 13:53:07 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/21 11:23:01 by tlouro-c         ###   ########.fr       */
+/*   Created: 2023/11/20 21:50:18 by tlouro-c          #+#    #+#             */
+/*   Updated: 2023/11/21 11:23:48 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void	print_stack(t_stack *stack)
+int	find_min(t_stack *stack)
 {
-	t_stack	*iter;
-	int		counter;
+	t_stack	*tmp;
+	int		min;
 
-	if (stack == NULL)
-		return ;
-	counter = 0;
-	iter = stack;
-	while (iter != NULL)
+	min = INT_MAX;
+	tmp = stack;
+	while (tmp != NULL)
 	{
-		if (counter++ == 0)
-			printf("TOP:     % i\n", iter -> data);
-		else
-			printf("         % i\n", iter -> data);
-		iter = iter -> next;
+		if (tmp -> data < min)
+			min = tmp -> data;
+		tmp = tmp -> next;
 	}
+	return (min);
+}
+
+int	ordered(t_stack *stack_a)
+{
+	t_stack	*tmp;
+	int		save;
+
+	save = stack_a -> data;
+	tmp = stack_a;
+	while (tmp != NULL)
+	{
+		if (tmp -> data < save)
+			return (0);
+		save = tmp -> data;
+		tmp = tmp -> next;
+	}
+	return (1);
 }

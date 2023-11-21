@@ -6,14 +6,14 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:21:56 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/10 13:50:32 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:25:09 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-int count_words(char *s)
+int	count_words(char *s)
 {
 	int	counter;
 	int	i;
@@ -31,8 +31,8 @@ int count_words(char *s)
 
 char	*strdupmod(char *s)
 {
-	char *new;
-	int	i;
+	char	*new;
+	int		i;
 
 	new = (char *)malloc(ft_strlen(s) + 1);
 	if (new == NULL)
@@ -60,7 +60,7 @@ char	**clear_loop(char **array, int len)
 
 char	**split(char *s)
 {
-	char 	**splited;
+	char	**splited;
 	int		i;
 	int		j;
 

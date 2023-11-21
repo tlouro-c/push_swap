@@ -6,12 +6,11 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:48:42 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/10 13:46:11 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:08:11 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
@@ -27,7 +26,8 @@ int	main(int argc, char *argv[])
 	}
 	fill_stack_a(&stack_a, argc, argv);
 	dup_check(&stack_a);
-	print_stack(stack_a);
-	(void)stack_b;
+	if (!ordered(stack_a))
+		algorithm_base(&stack_a, &stack_b);
+	// print_stack(stack_a);
 	return (0);
 }

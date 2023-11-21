@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:10 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/10 12:49:53 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/20 19:27:20 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	space(int c)
 	return (c == 32 || (c >= 7 && c <= 13));
 }
 
-size_t ft_strlen(char *s)
+size_t	ft_strlen(char *s)
 {
 	int	i;
 
@@ -58,4 +58,12 @@ size_t ft_strlen(char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
+}
+
+int	abs(int c)
+{
+	if (c >= 0)
+		return (c);
+	else 
+		return (c * -1);
 }

@@ -1,6 +1,5 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE_DIR)
-DEPFLAGS = -MP -MMD -MF $(OBJ_DIR)/$*.d
 NAME = push_swap
 
 INCLUDE_DIR = ./include
@@ -17,10 +16,13 @@ SRCS =  $(SRC_DIR)/push_swap_main.c  \
 		$(SRC_DIR)/pushes.c \
 		$(SRC_DIR)/rotate.c \
 		$(SRC_DIR)/reverse_rotate.c \
-		$(SRC_DIR)/split.c
+		$(SRC_DIR)/split.c \
+		$(SRC_DIR)/mini_sort.c \
+		$(SRC_DIR)/algorithm.c \
+		$(SRC_DIR)/algorithm_utils.c \
+		$(SRC_DIR)/algorithm_utils2.c
 
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
-DEPS = $(patsubst $(OBJ_DIR)/%.o,$(OBJ_DIR)/%.d,$(OBJS))
 
 all: $(NAME)
 
@@ -35,12 +37,12 @@ $(OBJ_DIR):
 
 # Create object files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(DEPFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: #TODO
 
 clean:
-	rm -f $(OBJS) $(DEPS)
+	rm -f $(OBJS)
 	if [ -d "$(OBJ_DIR)" ]; then \
 		rmdir $(OBJ_DIR); \
 	fi
@@ -55,4 +57,3 @@ r:
 
 .PHONY: all clean fclean re
 
--include $(OBJ_DIR)/$*.d
