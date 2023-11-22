@@ -6,12 +6,11 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:50:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 17:31:31 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 22:43:02 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	find_min(t_stack *stack)
 {
