@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:53:45 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:55:06 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	error_exit(void);
 int		valid_nr_check(char *s);
 void	dup_check(t_stack **stack);
 void	error_exit_free_str(char *s);
+void	error_exit_free_stack(t_stack **stack);
 
 /* END of errors_utils.c */
 

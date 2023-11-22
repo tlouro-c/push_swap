@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:49:32 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:33:53 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:23:49 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	add_cmd_end(t_list **list, char *string)
 
 	if (!valid_cmd(string))
 	{
-		stack_clear((t_stack **)list);
+		clear_list(list);
 		error_exit();
 		return ;
 	}
-	new = (t_list *)malloc(sizeof(t_list));
+	new = (t_list *)malloc(sizeof(t_list));		
 	string[ft_strlen(string) - 1] = '\0';
 	new -> cmd = string;
 	new -> next = NULL;

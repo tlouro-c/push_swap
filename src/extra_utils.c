@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:10 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/20 19:27:20 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:17:22 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,16 @@ int	ft_atoi(const char *str, t_stack **stack)
 	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
+	{
+		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
+			error_exit_free_stack(stack);
 		negative = (str[i++] == '-');
+	}
 	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
 		atoi = (atoi * 10) + (str[i] - 48);
 		if (atoi > INT_MAX || atoi < INT_MIN)
-		{
-			stack_clear(stack);
-			error_exit();
-		}
+			error_exit_free_stack(stack);
 		i++;
 	}
 	if (negative)

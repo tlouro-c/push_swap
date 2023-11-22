@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:14:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:34:53 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:24:34 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void	dup_check(t_stack **stack)
 			tmp = tmp -> next;
 		}
 		if (counter > 1)
-		{
-			stack_clear(stack);
-			error_exit();
-		}
+			error_exit_free_stack(stack);
 		current = current -> next;
 	}
 }
@@ -49,6 +46,12 @@ void	error_exit_free_str(char *s)
 	free (s);
 	write (2, "Error\n", 6);
 	exit(1);
+}
+
+void	error_exit_free_stack(t_stack **stack)
+{
+	stack_clear(stack);
+	error_exit();
 }
 
 int	valid_nr_check(char *s)

@@ -6,11 +6,12 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:42:06 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/21 11:27:29 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:55:11 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	algorithm_base(t_stack **stack_a, t_stack **stack_b)
 {
