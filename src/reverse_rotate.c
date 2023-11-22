@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:47:56 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:52:26 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:52:59 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 void	reverse_rotate(t_stack **stack)
 {
-	push(stack, pop_end(stack));
+	t_stack	*tmp;
+
+	tmp = *stack;
+	if (tmp != NULL && tmp -> next != NULL)
+		push(stack, pop_end(stack));
 }
 
 void	rra(t_stack **stack)

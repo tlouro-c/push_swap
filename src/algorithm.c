@@ -6,12 +6,11 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:42:06 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 18:07:36 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:52:49 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	algorithm_base(t_stack **stack_a, t_stack **stack_b)
 {
@@ -49,7 +48,7 @@ void	algorithm(t_stack **stack_a, t_stack **stack_b)
 	}
 	min.value = INT_MAX;
 	min.path = ROTATE;
-	last_rotates(stack_a, &min);
+	last_rotates(stack_a, &min, 0);
 }
 
 void	get_targets(t_stack *stack_a, t_stack *stack_b)

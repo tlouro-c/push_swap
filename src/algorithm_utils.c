@@ -6,12 +6,11 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:49:32 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 18:07:23 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:52:20 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	list_len_till(t_stack **stack, int max)
 {
@@ -107,15 +106,13 @@ void	get_target_cost(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	last_rotates(t_stack **stack_a, t_min *min)
+void	last_rotates(t_stack **stack_a, t_min *min, int cost)
 {
 	t_stack	*tmp;
-	int		cost;
 	int		len;
 
 	len = list_len_till(stack_a, INT_MAX);
 	tmp = *stack_a;
-	cost = 0;
 	while (tmp != NULL)
 	{
 		if (tmp -> data < min -> value)
@@ -123,6 +120,7 @@ void	last_rotates(t_stack **stack_a, t_min *min)
 			min -> value = tmp -> data;
 			min -> cost = cost;
 		}
+		cost++;
 		tmp = tmp -> next;
 	}
 	if (min -> cost > len / 2)

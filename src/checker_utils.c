@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 00:33:07 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:52:53 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:33:22 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	exec_cmd(char *cmd, t_stack **stack_a, t_stack **stack_b)
 		reverse_rotate(stack_a);
 	else if (ft_strcmp(cmd, "rrb") == 0)
 		reverse_rotate(stack_b);
-	else
+	else if (ft_strcmp(cmd, "rrr") == 0)
 		checker_rrr(stack_a, stack_b);
 }
 
