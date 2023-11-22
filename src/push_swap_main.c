@@ -6,12 +6,11 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:48:42 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:27:54 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 01:58:07 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// #include <stdio.h>
 
 int	main(int argc, char *argv[])
 {

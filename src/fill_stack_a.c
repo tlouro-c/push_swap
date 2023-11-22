@@ -6,12 +6,11 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:36:55 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/21 23:01:50 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 01:56:49 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	fill_stack_a(t_stack **stack, int argc, char *argv[])
 {
