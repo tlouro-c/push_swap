@@ -6,11 +6,12 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:49:32 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/21 11:22:16 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:07:23 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	list_len_till(t_stack **stack, int max)
 {
@@ -106,7 +107,7 @@ void	get_target_cost(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	last_rotates(t_stack **stack_a, t_min min)
+void	last_rotates(t_stack **stack_a, t_min *min)
 {
 	t_stack	*tmp;
 	int		cost;
@@ -117,18 +118,18 @@ void	last_rotates(t_stack **stack_a, t_min min)
 	cost = 0;
 	while (tmp != NULL)
 	{
-		if (tmp -> data < min.value)
+		if (tmp -> data < min -> value)
 		{
-			min.value = tmp -> data;
-			min.cost = cost;
+			min -> value = tmp -> data;
+			min -> cost = cost;
 		}
 		tmp = tmp -> next;
 	}
-	if (min.cost > len / 2)
-		min.path = REVERSE_ROTATE;
-	while (first(*stack_a) != min.value)
+	if (min -> cost > len / 2)
+		min -> path = REVERSE_ROTATE;
+	while (first(*stack_a) != min -> value)
 	{
-		if (min.path == ROTATE)
+		if (min -> path == ROTATE)
 			ra(stack_a);
 		else
 			rra(stack_a);

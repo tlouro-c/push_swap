@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 11:55:06 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:05:44 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ enum e_path {
 	ROTATE,
 	REVERSE_ROTATE
 };
+
+typedef struct s_mid
+{
+	int			count_below;
+	enum e_path	path;
+}	t_mid;
 
 typedef struct s_min
 {
@@ -140,7 +146,7 @@ t_stack	get_costs(t_stack *stack_a, t_stack *stack_b);
 void	rotate_same_path(t_stack **stack_a, t_stack **stack_b, t_stack cheap);
 void	move_cheapest(t_stack **stack_a, t_stack **stack_b, t_stack cheapest);
 
-void	last_rotates(t_stack **stack_a, t_min min);
+void	last_rotates(t_stack **stack_a, t_min *min);
 
 int		find_min(t_stack *stack);
 int		ordered(t_stack *stack_a);
@@ -156,5 +162,10 @@ void	perform_cmd(t_list **list, t_stack **stack_a, t_stack **stack_b);
 void	exec_cmd(char *cmd, t_stack **stack_a, t_stack **stack_b);
 void	clear_list(t_list **list);
 void	clear_stacks(t_stack **stack_a, t_stack **stack_b);
+
+void	bubble_sort(int *array, int size);
+int		mid(t_stack *stack);
+t_mid	below_mid(t_stack *stack, int mid, int size);
+void	a_to_b(t_stack **stack_a, t_stack **stack_b);
 
 #endif /* PUSH_SWAP_H */

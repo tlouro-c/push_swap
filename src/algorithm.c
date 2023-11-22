@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:42:06 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 11:55:11 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:07:36 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	algorithm(t_stack **stack_a, t_stack **stack_b)
 	t_stack	cheapest;
 	t_min	min;
 
-	while (list_len_till(stack_a, 4) > 3)
-		pb(stack_a, stack_b);
+	a_to_b(stack_a, stack_b);
+	mini_sort(stack_a);
 	while (*stack_b != NULL)
 	{
 		get_targets(*stack_a, *stack_b);
@@ -49,7 +49,7 @@ void	algorithm(t_stack **stack_a, t_stack **stack_b)
 	}
 	min.value = INT_MAX;
 	min.path = ROTATE;
-	last_rotates(stack_a, min);
+	last_rotates(stack_a, &min);
 }
 
 void	get_targets(t_stack *stack_a, t_stack *stack_b)

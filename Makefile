@@ -22,6 +22,7 @@ SRCS =  $(SRC_DIR)/push_swap_main.c  \
 		$(SRC_DIR)/algorithm.c \
 		$(SRC_DIR)/algorithm_utils.c \
 		$(SRC_DIR)/algorithm_utils2.c \
+		$(SRC_DIR)/bubble_sort.c
 
 BONUSF = $(SRC_DIR)/stack_essentials.c  \
 		$(SRC_DIR)/fill_stack_a.c \
@@ -40,7 +41,8 @@ BONUSF = $(SRC_DIR)/stack_essentials.c  \
 		$(SRC_DIR)/get_next_line_utils.c \
 		$(SRC_DIR)/get_next_line.c \
 		$(SRC_DIR)/checker.c \
-		$(SRC_DIR)/checker_utils.c
+		$(SRC_DIR)/checker_utils.c \
+		$(SRC_DIR)/bubble_sort.c
 
 OBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
 BOBJS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(BONUSF))
