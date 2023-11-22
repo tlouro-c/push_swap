@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:36:55 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/10 13:46:19 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/21 23:01:50 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,16 @@ void	fill_stack_a(t_stack **stack, int argc, char *argv[])
 	int	i;
 	int	number;
 
+	if (argv == NULL || argv[0] == NULL)
+		exit(1);
 	i = argc - 1;
-	while (0 < i)
+	while (0 <= i)
 	{
-		valid_nr_check(argv[i]);
+		if (valid_nr_check(argv[i]) == -1)
+		{
+			stack_clear(stack);
+			error_exit();
+		}
 		number = ft_atoi(argv[i], stack);
 		push(stack, number);
 		i--;

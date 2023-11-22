@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/21 11:25:41 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 01:53:45 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,18 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+typedef struct s_list
+{
+	char			*cmd;
+	struct s_list	*next;
+}	t_list;
+
 //* START of stack_essentials.c */
 
-void	push(t_stack **stack, int number);
-int		pop(t_stack **stack);
-void	insert_end(t_stack **stack, int number);
-int		pop_end(t_stack **stack);
+void	push(t_stack **stack, long number);
+long	pop(t_stack **stack);
+void	insert_end(t_stack **stack, long number);
+long	pop_end(t_stack **stack);
 void	stack_clear(t_stack **stack);
 
 /* END of stack_essentials.c */
@@ -54,9 +60,9 @@ void	stack_clear(t_stack **stack);
 //* START of errors_utils.c */
 
 void	error_exit(void);
-void	stack_empty(void);
-void	valid_nr_check(char *s);
+int		valid_nr_check(char *s);
 void	dup_check(t_stack **stack);
+void	error_exit_free_str(char *s);
 
 /* END of errors_utils.c */
 
@@ -84,26 +90,33 @@ void	print_stack(t_stack *stack);
 
 int		count_words(char *s);
 char	**split(char *string);
+char	*argjoin(int argc, char *argv[]);
 
 //? COMMANDS HERE
 
 //* START of swaps.c */
+void	swap(t_stack **stack);
 void	sa(t_stack **stack);
 void	sb(t_stack **stack);
 void	ss(t_stack **stack1, t_stack **stack2);
+void	checker_ss(t_stack **stack1, t_stack **stack2);
 //* START of pushes.c */
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
+void	checker_pa(t_stack **stack_a, t_stack **stack_b);
+void	checker_pb(t_stack **stack_a, t_stack **stack_b);
 //* START of rotate.c */
 void	rotate(t_stack **stack);
 void	ra(t_stack **stack);
 void	rb(t_stack **stack);
 void	rr(t_stack **stack1, t_stack **stack2);
+void	checker_rr(t_stack **stack1, t_stack **stack2);
 //* START of reverse_rotate.c */
 void	reverse_rotate(t_stack **stack);
 void	rra(t_stack **stack);
 void	rrb(t_stack **stack);
 void	rrr(t_stack **stack1, t_stack **stack2);
+void	checker_rrr(t_stack **stack1, t_stack **stack2);
 
 //? END OF COMMANDS
 
@@ -132,5 +145,15 @@ int		find_min(t_stack *stack);
 int		ordered(t_stack *stack_a);
 
 //* End of Algorithm Part
+
+void	read_cmd(t_list **list);
+void	add_cmd_end(t_list **list, char *string);
+int		valid_cmd(char *s);
+int		ft_strcmp(char *s1, char *s2);
+void	print_list(t_list *list);
+void	perform_cmd(t_list **list, t_stack **stack_a, t_stack **stack_b);
+void	exec_cmd(char *cmd, t_stack **stack_a, t_stack **stack_b);
+void	clear_list(t_list **list);
+void	clear_stacks(t_stack **stack_a, t_stack **stack_b);
 
 #endif /* PUSH_SWAP_H */

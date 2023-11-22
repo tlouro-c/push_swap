@@ -6,31 +6,33 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:36:48 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/09 21:37:06 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 01:34:16 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **stack, int number)
+void	push(t_stack **stack, long number)
 {
 	t_stack	*new;
 
+	if (number == INT_MAX + (long)1)
+		return ;
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (new == NULL)
-		stack_empty();
-	new -> data = number;
+		return ;
+	new -> data = (int)number;
 	new -> next = *stack;
 	*stack = new;
 }
 
-int	pop(t_stack **stack)
+long	pop(t_stack **stack)
 {
 	t_stack	*tmp;
-	int		popped;
+	long	popped;
 
 	if (*stack == NULL)
-		stack_empty();
+		return (INT_MAX + (long)1);
 	tmp = *stack;
 	popped = tmp -> data;
 	*stack = tmp -> next;
@@ -38,15 +40,17 @@ int	pop(t_stack **stack)
 	return (popped);
 }
 
-void	insert_end(t_stack **stack, int number)
+void	insert_end(t_stack **stack, long number)
 {
 	t_stack	*new;
 	t_stack	*tmp;
 
+	if (number == INT_MAX + (long)1)
+		return ;
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (new == NULL)
 		error_exit();
-	new -> data = number;
+	new -> data = (int)number;
 	new -> next = NULL;
 	if (*stack == NULL)
 		*stack = new;
@@ -59,14 +63,14 @@ void	insert_end(t_stack **stack, int number)
 	}
 }
 
-int	pop_end(t_stack **stack)
+long	pop_end(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tofree;
-	int		popped;
+	long	popped;
 
 	if (*stack == NULL)
-		stack_empty();
+		return (INT_MAX + (long)1);
 	tmp = *stack;
 	while (tmp -> next -> next != NULL)
 		tmp = tmp -> next;

@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:47:56 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/06 17:02:08 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/22 01:52:26 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,10 @@ void	rrr(t_stack **stack1, t_stack **stack2)
 	reverse_rotate(stack1);
 	reverse_rotate(stack2);
 	write (1, "rrr\n", 4);
+}
+
+void	checker_rrr(t_stack **stack1, t_stack **stack2)
+{
+	reverse_rotate(stack1);
+	reverse_rotate(stack2);
 }
