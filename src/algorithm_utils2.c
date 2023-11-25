@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:50:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 23:36:59 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:58:06 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ t_mid	below_mid(t_stack *stack, int mid, int size)
 	}
 	if (counter_1half >= counter_2half)
 		info.path = ROTATE;
-	else 
+	else
 		info.path = REVERSE_ROTATE;
 	info.count_below = counter_1half + counter_2half;
 	return (info);

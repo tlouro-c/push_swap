@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:42:06 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 20:52:49 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:58:30 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	get_targets(t_stack *stack_a, t_stack *stack_b)
 
 void	rotate_same_path(t_stack **stack_a, t_stack **stack_b, t_stack cheap)
 {
-	while (first(*stack_a) != cheap.target 
+	while (first(*stack_a) != cheap.target
 		&& first(*stack_b) != cheap.data)
 	{
 		if (cheap.path == ROTATE)

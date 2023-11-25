@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:10 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 16:39:19 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:58:45 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ int	abs(int c)
 {
 	if (c >= 0)
 		return (c);
-	else 
+	else
 		return (c * -1);
 }

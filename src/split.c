@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:21:56 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 16:29:16 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:56:07 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*argjoin(int argc, char *argv[])
 	{
 		j = 0;
 		if (argv[i][0] == '\0')
-			error_exit_free_str(final); 
+			error_exit_free_str(final);
 		while (argv[i][j] != '\0')
 			final[k++] = argv[i][j++];
 		final[k++] = ' ';
