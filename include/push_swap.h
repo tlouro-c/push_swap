@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 16:38:57 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:18:18 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,8 @@ int		ordered(t_stack *stack_a);
 
 //* End of Algorithm Part
 
-void	read_cmd(t_list **list);
-void	add_cmd_end(t_list **list, char *string);
+void	read_cmd(t_list **list, int argc, char *argv[], t_stack **stack_a);
+int		add_cmd_end(t_list **list, char *s);
 int		valid_cmd(char *s);
 int		ft_strcmp(char *s1, char *s2);
 void	print_list(t_list *list);

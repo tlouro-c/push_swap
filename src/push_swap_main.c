@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:48:42 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 16:35:01 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:13:35 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 	dup_check(&stack_a, argc, argv);
 	if (!ordered(stack_a))
 		algorithm_base(&stack_a, &stack_b);
-	free(argv);
+	clear_loop(argv, argc);
 	stack_clear(&stack_a);
 	return (0);
 }

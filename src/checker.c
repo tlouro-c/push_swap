@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:49:32 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 15:02:53 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:40:21 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,19 @@ int	main(int argc, char *argv[])
 	argc = count_words(argv[1]);
 	argv = split(argv[1]);
 	fill_stack_a(&stack_a, argc, argv);
-	dup_check(&stack_a);
-	read_cmd(&list);
+	dup_check(&stack_a, argc, argv);
+	read_cmd(&list, argc, argv, &stack_a);
 	perform_cmd(&list, &stack_a, &stack_b);
 	if (ordered(stack_a) && stack_b == NULL)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+	clear_loop(argv, argc);
 	clear_list(&list);
 	clear_stacks(&stack_a, &stack_b);
 }
 
-void	read_cmd(t_list **list)
+void	read_cmd(t_list **list, int argc, char *argv[], t_stack **stack_a)
 {
 	char	*save;
 
@@ -48,24 +49,26 @@ void	read_cmd(t_list **list)
 		save = get_next_line(0);
 		if (save == NULL)
 			break ;
-		add_cmd_end(list, save);
+		if (add_cmd_end(list, save) == 1)
+		{
+			stack_clear(stack_a);
+			clear_list(list);
+			clear_loop(argv, argc);
+			error_exit_free_str(save);
+		}
 	}
 }
 
-void	add_cmd_end(t_list **list, char *string)
+int	add_cmd_end(t_list **list, char *s)
 {
 	t_list	*new;
 	t_list	*tmp;
 
-	if (!valid_cmd(string))
-	{
-		clear_list(list);
-		error_exit();
-		return ;
-	}
+	if (!valid_cmd(s))
+		return (1);
 	new = (t_list *)malloc(sizeof(t_list));
-	string[ft_strlen(string) - 1] = '\0';
-	new -> cmd = string;
+	s[ft_strlen(s) - 1] = '\0';
+	new -> cmd = s;
 	new -> next = NULL;
 	if (*list == NULL)
 		*list = new;
@@ -76,6 +79,7 @@ void	add_cmd_end(t_list **list, char *string)
 			tmp = tmp -> next;
 		tmp -> next = new;
 	}
+	return (0);
 }
 
 int	valid_cmd(char *s)

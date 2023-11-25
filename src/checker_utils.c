@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 00:33:07 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 20:33:22 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 21:35:41 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	clear_list(t_list **list)
 	while (tmp != NULL)
 	{
 		next = tmp -> next;
+		free(tmp -> cmd);
 		free (tmp);
 		tmp = next;
 	}
