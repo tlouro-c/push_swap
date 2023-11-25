@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:50:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/25 14:56:01 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:36:59 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	mid(t_stack *stack)
 	int		*array;
 	int		i;
 	int		len;
+	int		mid;
 
 	len = list_len_till(&stack, INT_MAX);
 	array = (int *)malloc(len * sizeof(int));
@@ -87,7 +88,9 @@ int	mid(t_stack *stack)
 		tmp = tmp -> next;
 	}
 	bubble_sort(array, len);
-	return (array[len / 2]);
+	mid = array[len / 2];
+	free(array);
+	return (mid);
 }
 
 t_mid	below_mid(t_stack *stack, int mid, int size)
