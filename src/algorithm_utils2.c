@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 21:50:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 22:43:02 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:56:01 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int	ordered(t_stack *stack_a)
 	t_stack	*tmp;
 	int		save;
 
+	if (stack_a == NULL)
+		return (1);
 	save = stack_a -> data;
 	tmp = stack_a;
 	while (tmp != NULL)

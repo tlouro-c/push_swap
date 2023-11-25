@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:35:02 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:49:35 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 14:57:54 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	swap(t_stack **stack)
 	t_stack	*tmp1;
 	t_stack	*tmp2;
 
+	if (list_len_till(stack, 3) < 2)
+		return ;
 	tmp1 = *stack;
 	tmp2 = tmp1 -> next;
 	tmp1 -> next = tmp2 -> next;
