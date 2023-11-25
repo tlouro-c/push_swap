@@ -6,13 +6,13 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:14:18 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 11:24:34 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:30:16 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	dup_check(t_stack **stack)
+void	dup_check(t_stack **stack, int argc, char *argv[])
 {
 	t_stack	*tmp;
 	t_stack	*current;
@@ -30,7 +30,7 @@ void	dup_check(t_stack **stack)
 			tmp = tmp -> next;
 		}
 		if (counter > 1)
-			error_exit_free_stack(stack);
+			error_exit_free_stack(stack, argc, argv);
 		current = current -> next;
 	}
 }
@@ -48,8 +48,9 @@ void	error_exit_free_str(char *s)
 	exit(1);
 }
 
-void	error_exit_free_stack(t_stack **stack)
+void	error_exit_free_stack(t_stack **stack, int argc, char *argv[])
 {
+	clear_loop(argv, argc);
 	stack_clear(stack);
 	error_exit();
 }

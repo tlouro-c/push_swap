@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 12:21:56 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 01:31:28 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:29:16 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ char	**split(char *s)
 			i++;
 	}
 	splited[j] = NULL;
+	free(s);
 	return (splited);
 }
 

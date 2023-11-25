@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:48:42 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 22:38:10 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:35:01 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int	main(int argc, char *argv[])
 	argc = count_words(argv[1]);
 	argv = split(argv[1]);
 	fill_stack_a(&stack_a, argc, argv);
-	dup_check(&stack_a);
+	dup_check(&stack_a, argc, argv);
 	if (!ordered(stack_a))
 		algorithm_base(&stack_a, &stack_b);
+	free(argv);
 	stack_clear(&stack_a);
 	return (0);
 }

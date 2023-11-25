@@ -6,13 +6,13 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:10 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 11:17:22 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:39:19 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str, t_stack **stack)
+int	ft_atoi(const char *str, t_stack **stack, int argc, char *argv[])
 {
 	unsigned int	negative;
 	unsigned int	i;
@@ -26,14 +26,14 @@ int	ft_atoi(const char *str, t_stack **stack)
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (!(str[i + 1] >= '0' && str[i + 1] <= '9'))
-			error_exit_free_stack(stack);
+			error_exit_free_stack(stack, argc, argv);
 		negative = (str[i++] == '-');
 	}
 	while ((str[i] >= '0' && str[i] <= '9') && str[i] != '\0')
 	{
 		atoi = (atoi * 10) + (str[i] - 48);
 		if (atoi > INT_MAX || atoi < INT_MIN)
-			error_exit_free_stack(stack);
+			error_exit_free_stack(stack, argc, argv);
 		i++;
 	}
 	if (negative)

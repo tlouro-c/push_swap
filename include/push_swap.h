@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:26:57 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/22 20:52:42 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/25 16:38:57 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,14 @@ void	stack_clear(t_stack **stack);
 
 void	error_exit(void);
 int		valid_nr_check(char *s);
-void	dup_check(t_stack **stack);
+void	dup_check(t_stack **stack, int argc, char *argv[]);
 void	error_exit_free_str(char *s);
-void	error_exit_free_stack(t_stack **stack);
-
+void	error_exit_free_stack(t_stack **stack, int argc, char *argv[]);
 /* END of errors_utils.c */
 
 //* START of extra_utils.c */
 
-int		ft_atoi(const char *str, t_stack **stack);
+int		ft_atoi(const char *str, t_stack **stack, int argc, char *argv[]);
 int		ft_isdigit(int c);
 int		space(int c);
 size_t	ft_strlen(char *s);
@@ -98,6 +97,7 @@ void	print_stack(t_stack *stack);
 int		count_words(char *s);
 char	**split(char *string);
 char	*argjoin(int argc, char *argv[]);
+char	**clear_loop(char **array, int len);
 
 //? COMMANDS HERE
 
