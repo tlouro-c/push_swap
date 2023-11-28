@@ -6,7 +6,7 @@
 /*   By: tlouro-c <tlouro-c@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 12:35:10 by tlouro-c          #+#    #+#             */
-/*   Updated: 2023/11/28 17:56:33 by tlouro-c         ###   ########.fr       */
+/*   Updated: 2023/11/28 22:38:03 by tlouro-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_atoi(const char *str, t_stack **stack, int argc, char *argv[])
 	unsigned int	i;
 	long			atoi;
 
+	negative = 0;
 	atoi = 0;
 	i = 0;
 	while (str[i] == 32 || (str[i] > 8 && str[i] < 14))
